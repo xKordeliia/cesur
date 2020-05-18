@@ -13,6 +13,7 @@ plugins {
     id 'java'
     id 'jacoco'
     id 'info.solidsoft.pitest' version '1.4.5'
+    id "org.sonarqube" version "1.1"
 }
 
 dependencies {
@@ -40,4 +41,11 @@ pitest {
     outputFormats = ['HTML']
     timestampedReports = false
     mutators = ['DEFAULTS']
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "MyProjectName"
+        property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
+    }
 }
