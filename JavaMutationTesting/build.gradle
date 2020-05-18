@@ -13,7 +13,7 @@ plugins {
     id 'java'
     id 'jacoco'
     id 'info.solidsoft.pitest' version '1.4.5'
-    id "org.sonarqube" version "1.1"
+    id "org.sonarqube" version "2.6.2"
 }
 
 dependencies {
@@ -43,9 +43,20 @@ pitest {
     mutators = ['DEFAULTS']
 }
 
+//sonarqube {
+//    properties {
+//        property "sonar.projectName", "MyProjectName"
+//        property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
+//    }
+//}
 sonarqube {
     properties {
-        property "sonar.projectName", "MyProjectName"
-        property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
+        property 'sonar.coverage.exclusions', "**/*Constants*"
+    }
+}
+
+subprojects {
+    sonarqube {
+        skipProject = true
     }
 }
