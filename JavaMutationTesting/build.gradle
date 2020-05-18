@@ -38,7 +38,7 @@ pitest {
     testPlugin = 'junit5'
     targetClasses = ['io.github.picodotdev.blogbitix.*']
     threads = 4
-    outputFormats = ['HTML']
+    outputFormats = ['XML']
     timestampedReports = false
     mutators = ['DEFAULTS']
 }
