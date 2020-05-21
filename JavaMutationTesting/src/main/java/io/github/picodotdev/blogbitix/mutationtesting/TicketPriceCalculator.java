@@ -13,6 +13,7 @@ public class TicketPriceCalculator {
         double price = countAdults(passengers) * adultTicketPrice + countChildrens(passengers) * childTicketPrice;
         double discount = (isFamily(passengers)) ? FAMILY_DISCOUNT : 0d;
         System.out.println("CalculatePrice:"+price);
+        System.out.println("DEVELOP");
         return price * (1 - discount);
     }
 
