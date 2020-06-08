@@ -14,7 +14,6 @@ public class TicketPriceCalculator {
         double discount = (isFamily(passengers)) ? FAMILY_DISCOUNT : 0d;
         System.out.println("CalculatePrice:"+price);
         return price * (1 - discount);
-        System.out.println ("PRUEBA");
     }
 
     private long countAdults(List<Passenger> passengers) {
