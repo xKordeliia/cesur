@@ -13,6 +13,7 @@ plugins {
     id 'java'
     id 'jacoco'
     id 'info.solidsoft.pitest' version '1.4.5'
+    id "org.sonarqube" version "2.6.2"
 }
 
 dependencies {
@@ -40,4 +41,16 @@ pitest {
     outputFormats = ['HTML']
     timestampedReports = false
     mutators = ['DEFAULTS']
+}
+
+sonarqube {
+    properties {
+        property 'sonar.coverage.exclusions', "**/*Constants*"
+    }
+}
+
+subprojects {
+    sonarqube {
+        skipProject = true
+    }
 }
