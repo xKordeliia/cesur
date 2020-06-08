@@ -15,8 +15,7 @@ public class TicketPriceCalculator {
         System.out.println("CalculatePrice:"+price);
         System.out.println("RAMA TOÑA");
         return price * (1 - discount);
-        System.out.println ("PRUEBA");
-    }
+           }
 
     private long countAdults(List<Passenger> passengers) {
         return passengers.stream().filter(this::isAdult).count();
