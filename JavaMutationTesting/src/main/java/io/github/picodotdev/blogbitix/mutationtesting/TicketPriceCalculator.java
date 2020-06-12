@@ -8,7 +8,7 @@ public class TicketPriceCalculator {
 
     private static int ADULT_AGE = 18;
     private static int FREE_TICKET_AGE_BELOW = 3;
-
+    System.out.println(Laura_Alvarez);
     public double calculatePrice(List<Passenger> passengers, int adultTicketPrice, int childTicketPrice) {
         double price = countAdults(passengers) * adultTicketPrice + countChildrens(passengers) * childTicketPrice;
         double discount = (isFamily(passengers)) ? FAMILY_DISCOUNT : 0d;
